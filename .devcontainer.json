@@ -1,0 +1,11 @@
+{
+    "image": "mtaleksa/solidity-dev:1.17-1.10.15-0.8.11",
+    "extensions": [
+      "juanblanco.solidity",
+      "golang.go",
+      "eamodio.gitlens",
+      "github.copilot",
+      "streetsidesoftware.code-spell-checker",
+      "k--kato.intellij-idea-keybindings",
+    ]
+  }
