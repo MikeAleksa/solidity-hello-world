@@ -1,6 +1,6 @@
 # Solidity Hello World
 
-A "Hello, World" example Solidity program using Go for unit testing in a containerized development environment.
+A "Hello, World" example Solidity contract using Go for unit testing in a containerized development environment.
 
 ---
 
@@ -26,7 +26,7 @@ For more info about the solidity-dev docker image, see source repository here: [
 
 Generate go bindings:
 ```
-abigen --sol helloworld.sol --pkg main --out helloworld.go
+go generate
 ```
 
 Initialize go modules if no go.mod, go.sum files

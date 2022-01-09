@@ -1,5 +1,7 @@
 package main
 
+//go:generate abigen --sol helloworld.sol --pkg main --out helloworld.go
+
 import (
 	"math/big"
 	"testing"
@@ -40,7 +42,7 @@ func (s *HelloworldTestSuite) SetupTest() {
 	// create genesis block with an account allocated with funds
 	s.address = s.auth.From
 	s.gAlloc = map[common.Address]core.GenesisAccount{
-		s.address: {Balance: big.NewInt(100000000000000)},
+		s.address: {Balance: big.NewInt(1000000000000000000)},
 	}
 
 	// create a fully mocked simulated blockchain backed by in-memory database
@@ -59,5 +61,12 @@ func (s *HelloworldTestSuite) SetupTest() {
 func (s *HelloworldTestSuite) TestSay() {
 	str, err := s.helloworld.Say(nil)
 	s.Equal("hello etherworld", str)
+	s.Nil(err)
+}
+
+// Test helloworld contract SayName function
+func (s *HelloworldTestSuite) TestSayName() {
+	str, err := s.helloworld.SayName(nil, "my name")
+	s.Equal("my name", str)
 	s.Nil(err)
 }

@@ -30,11 +30,12 @@ var (
 
 // HelloworldMetaData contains all meta data concerning the Helloworld contract.
 var HelloworldMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"name\":\"say\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"name\":\"say\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"sayName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}]",
 	Sigs: map[string]string{
 		"954ab4b2": "say()",
+		"e6a3527d": "sayName(string)",
 	},
-	Bin: "0x608060405234801561001057600080fd5b5060ee8061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063954ab4b214602d575b600080fd5b604080518082018252601081526f1a195b1b1bc8195d1a195c9ddbdc9b1960821b60208201529051605d91906066565b60405180910390f35b600060208083528351808285015260005b818110156091578581018301518582016040015282016077565b8181111560a2576000604083870101525b50601f01601f191692909201604001939250505056fea26469706673582212201c2228ff2aef15d44a5e8f24534370ea3734993045a365aae16ccaeed398717964736f6c634300080b0033",
+	Bin: "0x608060405234801561001057600080fd5b506101dc806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063954ab4b21461003b578063e6a3527d14610079575b600080fd5b60408051808201909152601081526f1a195b1b1bc8195d1a195c9ddbdc9b1960821b60208201525b604051610070919061008a565b60405180910390f35b6100636100873660046100f5565b90565b600060208083528351808285015260005b818110156100b75785810183015185820160400152820161009b565b818111156100c9576000604083870101525b50601f01601f1916929092016040019392505050565b634e487b7160e01b600052604160045260246000fd5b60006020828403121561010757600080fd5b813567ffffffffffffffff8082111561011f57600080fd5b818401915084601f83011261013357600080fd5b813581811115610145576101456100df565b604051601f8201601f19908116603f0116810190838211818310171561016d5761016d6100df565b8160405282815287602084870101111561018657600080fd5b82602086016020830137600092810160200192909252509594505050505056fea26469706673582212201e11e27dabb15a83ea3fae2b8a4b6cec2814e4d97b9126d66be2053194ed4fc664736f6c634300080b0033",
 }
 
 // HelloworldABI is the input ABI used to generate the binding from.
@@ -237,4 +238,35 @@ func (_Helloworld *HelloworldSession) Say() (string, error) {
 // Solidity: function say() pure returns(string)
 func (_Helloworld *HelloworldCallerSession) Say() (string, error) {
 	return _Helloworld.Contract.Say(&_Helloworld.CallOpts)
+}
+
+// SayName is a free data retrieval call binding the contract method 0xe6a3527d.
+//
+// Solidity: function sayName(string name) pure returns(string)
+func (_Helloworld *HelloworldCaller) SayName(opts *bind.CallOpts, name string) (string, error) {
+	var out []interface{}
+	err := _Helloworld.contract.Call(opts, &out, "sayName", name)
+
+	if err != nil {
+		return *new(string), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(string)).(*string)
+
+	return out0, err
+
+}
+
+// SayName is a free data retrieval call binding the contract method 0xe6a3527d.
+//
+// Solidity: function sayName(string name) pure returns(string)
+func (_Helloworld *HelloworldSession) SayName(name string) (string, error) {
+	return _Helloworld.Contract.SayName(&_Helloworld.CallOpts, name)
+}
+
+// SayName is a free data retrieval call binding the contract method 0xe6a3527d.
+//
+// Solidity: function sayName(string name) pure returns(string)
+func (_Helloworld *HelloworldCallerSession) SayName(name string) (string, error) {
+	return _Helloworld.Contract.SayName(&_Helloworld.CallOpts, name)
 }

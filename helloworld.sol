@@ -5,4 +5,8 @@ contract helloworld {
     function say() public pure returns (string memory) {
         return "hello etherworld";
     }
+
+    function sayName(string memory name) public pure returns (string memory) {
+        return name;
+    }
 }
