@@ -1,0 +1,26 @@
+name: Unit Test Contract
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  unit-test:
+    name: Unit Test Contract
+    runs-on: ubuntu-latest
+    container: mtaleksa/solidity-dev:1.17-1.10.15-0.8.11
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Generate contract bindings
+      run: |
+        go generate
+
+    - name: Unit test
+      run: |
+        go test -v
