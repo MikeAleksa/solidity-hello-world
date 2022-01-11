@@ -1,6 +1,9 @@
 # Solidity Hello World
 
-A "Hello, World" example Solidity contract using Go for unit testing in a containerized development environment.
+
+A "Hello, World" example Solidity contract using Go for unit testing in a containerized development environment, and automated unit testing using Github Actions CI/CD.
+
+[![Unit Test Contract](https://github.com/MikeAleksa/solidity-hello-world/actions/workflows/unit-test.yaml/badge.svg)](https://github.com/MikeAleksa/solidity-hello-world/actions/workflows/unit-test.yaml)
 
 ---
 
