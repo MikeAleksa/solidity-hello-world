@@ -1,5 +1,5 @@
 {
-    "image": "mtaleksa/solidity-dev:1.17-1.10.15-0.8.11",
+    "image": "mtaleksa/solidity-go:1.17-1.10.15-0.8.11",
     "extensions": [
       "juanblanco.solidity",
       "golang.go",

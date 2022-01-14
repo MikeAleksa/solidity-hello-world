@@ -8,7 +8,7 @@ A "Hello, World" example Solidity contract using Go for unit testing in a contai
 
 ## Developing in Docker
 
-Use the solidity-dev docker container as a VSCode devcontainer:
+Use the solidity-go docker container as a VSCode devcontainer:
 
 * Install VSCode
 
@@ -18,9 +18,9 @@ Use the solidity-dev docker container as a VSCode devcontainer:
 
 * Run `Reopen in Container`
 
-* The solidity-dev container has access to golang, geth, abigen, and solc
+* The solidity-go container has access to golang, geth, abigen, and solc
 
-For more info about the solidity-dev docker image, see source repository here: [MikeAleksa/solidity-docker](https://github.com/MikeAleksa/solidity-docker)
+For more info about the solidity-go docker image, see source repository here: [MikeAleksa/solidity-docker-go](https://github.com/MikeAleksa/solidity-docker-go)
 
 ---
 
